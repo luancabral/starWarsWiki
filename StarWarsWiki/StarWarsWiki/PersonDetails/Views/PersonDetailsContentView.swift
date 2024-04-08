@@ -1,5 +1,5 @@
 //
-//  PersonDetails.swift
+//  PersonDetailsContentView.swift
 //  StarWarsWiki
 //
 //  Created by Luan Cabral on 07/04/24.
@@ -7,20 +7,30 @@
 
 import SwiftUI
 
-struct PersonDetails: View {
-    let person: Person
+struct PersonDetailsContentView: View {
+    @StateObject var viewModel: PersonDetailsContentViewModel
+    
+    
+    init(person: Person) {
+        _viewModel = StateObject(wrappedValue: PersonDetailsContentViewModel(person: person))
+    }
+    
     var body: some View {
-        Text("Hello, \(person.name)")
+        ScrollView(.vertical, showsIndicators: false){
+            MoversInfoView(viewModel.getFilms(), title: "Movies")
+        }
+        .navigationTitle(viewModel.person.name)
     }
 }
 
 struct PersonDetails_Previews: PreviewProvider {
     static var previews: some View {
-        PersonDetails(person: Person(name: "Luke",
-                                     birthYear: "",
-                                     url: "",
-                                     mass: "",
-                                     height: "",
-                                     gender: .male))
+        PersonDetailsContentView(person: Person(name: "Luke",
+                                                birthYear: "",
+                                                url: "",
+                                                mass: "",
+                                                height: "",
+                                                films: [],
+                                                gender: .male))
     }
 }

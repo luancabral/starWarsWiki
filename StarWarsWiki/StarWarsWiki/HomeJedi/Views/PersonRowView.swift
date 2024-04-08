@@ -57,6 +57,8 @@ struct PersonRowView_Previews: PreviewProvider {
                                      birthYear: "19BBY",
                                      url: "https://swapi.dev/api/people/1/",
                                      mass: "77",
-                                     height: "172", gender: .female))
+                                     height: "172",
+                                     films: [],
+                                     gender: .female))
     }
 }

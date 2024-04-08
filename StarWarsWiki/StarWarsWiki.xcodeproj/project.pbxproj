@@ -19,6 +19,10 @@
 		0FEAED422BC3881700CE0141 /* PersonDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED412BC3881700CE0141 /* PersonDetailsContentView.swift */; };
 		0FEAED452BC388E100CE0141 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED442BC388E100CE0141 /* ServiceManager.swift */; };
 		0FEAED472BC389C700CE0141 /* StarWarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED462BC389C700CE0141 /* StarWarsService.swift */; };
+		0FEAED4E2BC48D2C00CE0141 /* MoversInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED4D2BC48D2C00CE0141 /* MoversInfoItemView.swift */; };
+		0FEAED502BC4918100CE0141 /* MoversInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED4F2BC4918100CE0141 /* MoversInfoView.swift */; };
+		0FEAED532BC4964C00CE0141 /* PersonDetailsContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED522BC4964C00CE0141 /* PersonDetailsContentViewModel.swift */; };
+		0FEAED552BC498CE00CE0141 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAED542BC498CE00CE0141 /* Film.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		0FEAED412BC3881700CE0141 /* PersonDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsContentView.swift; sourceTree = "<group>"; };
 		0FEAED442BC388E100CE0141 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		0FEAED462BC389C700CE0141 /* StarWarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsService.swift; sourceTree = "<group>"; };
+		0FEAED4D2BC48D2C00CE0141 /* MoversInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoversInfoItemView.swift; sourceTree = "<group>"; };
+		0FEAED4F2BC4918100CE0141 /* MoversInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoversInfoView.swift; sourceTree = "<group>"; };
+		0FEAED522BC4964C00CE0141 /* PersonDetailsContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsContentViewModel.swift; sourceTree = "<group>"; };
+		0FEAED542BC498CE00CE0141 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 				0FEAED372BC093DF00CE0141 /* Person.swift */,
 				0FEAED392BC0989B00CE0141 /* Page.swift */,
 				0FEAED3B2BC0A01600CE0141 /* APIError.swift */,
+				0FEAED542BC498CE00CE0141 /* Film.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 		0FEAED492BC38C0000CE0141 /* PersonDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0FEAED512BC494F200CE0141 /* ViewModel */,
 				0FEAED4A2BC48C2600CE0141 /* Views */,
 			);
 			path = PersonDetails;
@@ -151,8 +161,18 @@
 			isa = PBXGroup;
 			children = (
 				0FEAED412BC3881700CE0141 /* PersonDetailsContentView.swift */,
+				0FEAED4D2BC48D2C00CE0141 /* MoversInfoItemView.swift */,
+				0FEAED4F2BC4918100CE0141 /* MoversInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0FEAED512BC494F200CE0141 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FEAED522BC4964C00CE0141 /* PersonDetailsContentViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,13 +248,17 @@
 				0FEAED252BC08D9F00CE0141 /* HomeContentView.swift in Sources */,
 				0FEAED352BC091C800CE0141 /* HomeContentViewModel.swift in Sources */,
 				0FEAED472BC389C700CE0141 /* StarWarsService.swift in Sources */,
+				0FEAED4E2BC48D2C00CE0141 /* MoversInfoItemView.swift in Sources */,
+				0FEAED532BC4964C00CE0141 /* PersonDetailsContentViewModel.swift in Sources */,
 				0FEAED382BC093DF00CE0141 /* Person.swift in Sources */,
 				0FEAED422BC3881700CE0141 /* PersonDetailsContentView.swift in Sources */,
 				0FEAED232BC08D9F00CE0141 /* StarWarsWikiApp.swift in Sources */,
 				0FEAED452BC388E100CE0141 /* ServiceManager.swift in Sources */,
 				0FEAED3A2BC0989B00CE0141 /* Page.swift in Sources */,
 				0FEAED402BC0A5BD00CE0141 /* PersonRowView.swift in Sources */,
+				0FEAED502BC4918100CE0141 /* MoversInfoView.swift in Sources */,
 				0FEAED3C2BC0A01600CE0141 /* APIError.swift in Sources */,
+				0FEAED552BC498CE00CE0141 /* Film.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

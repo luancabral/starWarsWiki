@@ -14,7 +14,7 @@ struct HomeContentView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.people) { person in
-                NavigationLink(destination: PersonDetails(person: person)) {
+                NavigationLink(destination: PersonDetailsContentView(person: person)) {
                     PersonRowView(person: person)
                         .onAppear{
                             if person.id == viewModel.people.last?.id {

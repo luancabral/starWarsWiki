@@ -12,10 +12,11 @@ struct Person: Decodable, Identifiable, Hashable {
     var id: String { url }
     
     let name, birthYear, url, mass, height: String
+    let films: [String]
     let gender: Gender
     
     private enum CodingKeys: String, CodingKey {
-        case name, url, mass, height, gender
+        case name, url, mass, height, gender, films
         case birthYear = "birth_year"
     }
     
