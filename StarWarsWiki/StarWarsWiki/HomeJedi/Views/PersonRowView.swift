@@ -18,7 +18,7 @@ struct PersonRowView: View {
                 .scaledToFit()
                 .frame(width: 24, height: 24)
                 .foregroundColor(person.gender.iconColor)
-            //name and birth year
+            //Name and Birth year
             VStack(alignment: .leading, spacing: 4) {
                 Text(person.name)
                     .font(.subheadline)
@@ -33,7 +33,7 @@ struct PersonRowView: View {
             
             Spacer()
             
-            //mass and height
+            //Mass and height
             VStack(alignment: .trailing, spacing: 4) {
                 Text("Height: \(person.height)")
                     .font(.subheadline)

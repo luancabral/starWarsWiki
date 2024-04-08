@@ -8,14 +8,14 @@
 import Foundation
 
 protocol StarWarsServiceProtocol {
-    func fetchPage(completion: @escaping (Result<Page, APIError>) -> Void)
+    func fetchPage(url: String, completion: @escaping (Result<Page, APIError>) -> Void)
 }
 
 final class StarWarsService: StarWarsServiceProtocol {
     let serviceManager = ServiceManager()
     
-    func fetchPage(completion: @escaping (Result<Page, APIError>) -> Void) {
-        serviceManager.get(with: "https://swapi.dev/api/people", dataType: Page.self) { result in
+    func fetchPage(url: String, completion: @escaping (Result<Page, APIError>) -> Void) {
+        serviceManager.get(with: url, dataType: Page.self) { result in
             DispatchQueue.main.async {
                 completion(result)
             }

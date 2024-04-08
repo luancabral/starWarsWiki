@@ -9,6 +9,6 @@ import Foundation
 
 struct Page: Decodable {
     let count: Int
-    let next, previous: String?
+    let next: String?
     let results: [Person]
 }

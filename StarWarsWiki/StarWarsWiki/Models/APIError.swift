@@ -20,7 +20,7 @@ enum APIError: Error, LocalizedError {
         case .serverError:
             return "There was an error with the server. Please try again later"
         case .invalidData:
-            return "The coin data is invalid. Please try again later"
+            return "The data is invalid. Please try again later"
         case .unkown(let error):
             return error.localizedDescription
         }

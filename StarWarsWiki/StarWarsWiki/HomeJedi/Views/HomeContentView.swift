@@ -16,11 +16,27 @@ struct HomeContentView: View {
             List(viewModel.people) { person in
                 NavigationLink(destination: PersonDetails(person: person)) {
                     PersonRowView(person: person)
+                        .onAppear{
+                            if person.id == viewModel.people.last?.id {
+                                viewModel.fetchNextPage()
+                            }
+                        }
                 }
             }
-            .navigationTitle("Star Wars Wiki")
+            .refreshable {
+                viewModel.handleRefresh()
+            }
+            .onReceive(viewModel.$error, perform: { error in
+                if error != nil {
+                    showAlert.toggle()
+                }
+            })
+            .alert(isPresented: $showAlert, content: {
+                Alert(title: Text("Error"),
+                      message: Text(viewModel.error?.localizedDescription ?? ""))
+            })
+            .navigationTitle("StarWars Wiki")
         }
-        
     }
 }
 

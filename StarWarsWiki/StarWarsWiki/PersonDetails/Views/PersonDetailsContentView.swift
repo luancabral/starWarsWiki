@@ -16,6 +16,11 @@ struct PersonDetails: View {
 
 struct PersonDetails_Previews: PreviewProvider {
     static var previews: some View {
-        PersonDetails(person: Person(name: "Luke", birthYear: "", url: "", mass: "", height: "", gender: .male))
+        PersonDetails(person: Person(name: "Luke",
+                                     birthYear: "",
+                                     url: "",
+                                     mass: "",
+                                     height: "",
+                                     gender: .male))
     }
 }

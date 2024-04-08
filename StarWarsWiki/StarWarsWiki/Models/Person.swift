@@ -24,6 +24,10 @@ struct Person: Decodable, Identifiable, Hashable {
         case female = "female"
         case other  = "n/a"
         
+        init(from decoder: Decoder) throws {
+            self = (try? Gender(rawValue: decoder.singleValueContainer().decode(RawValue.self))) ?? .other
+        }
+        
         var iconColor: Color {
             switch self {
             case .male: return .blue

@@ -142,9 +142,17 @@
 		0FEAED492BC38C0000CE0141 /* PersonDetails */ = {
 			isa = PBXGroup;
 			children = (
-				0FEAED412BC3881700CE0141 /* PersonDetailsContentView.swift */,
+				0FEAED4A2BC48C2600CE0141 /* Views */,
 			);
 			path = PersonDetails;
+			sourceTree = "<group>";
+		};
+		0FEAED4A2BC48C2600CE0141 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FEAED412BC3881700CE0141 /* PersonDetailsContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
