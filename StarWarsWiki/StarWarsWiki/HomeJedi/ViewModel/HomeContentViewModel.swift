@@ -5,11 +5,12 @@
 //  Created by Luan Cabral on 05/04/24.
 //
 
-import Foundation
+import SwiftUI
 
 final class HomeContentViewModel: ObservableObject {
     @Published var people = [Person]()
     @Published var error: Error?
+    @Published var isLoading = false
     
     var page: Page?
     
@@ -26,9 +27,11 @@ final class HomeContentViewModel: ObservableObject {
         fetchPersonPage(baseURL)
     }
     
-    func fetchPersonPage(_ urlString: String) {
+    func fetchPersonPage(_ urlString: String, needsLoad: Bool = true) {
+        self.isLoading = needsLoad
         service.fetchPage(url: urlString) { [weak self] result in
             guard let self = self else { return }
+            self.isLoading = false
             switch result {
             case .success(let page):
                 self.people.append(contentsOf: page.results)
@@ -41,7 +44,7 @@ final class HomeContentViewModel: ObservableObject {
     
     func fetchNextPage() {
         guard let nextPageUrl = page?.next else { return }
-        fetchPersonPage(nextPageUrl)
+        fetchPersonPage(nextPageUrl, needsLoad: false)
     }
     
 }

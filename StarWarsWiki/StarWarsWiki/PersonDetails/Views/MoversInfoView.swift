@@ -15,6 +15,7 @@ struct MoversInfoView: View {
         self.data = data
         self.title = title
     }
+    
     var body: some View {
         VStack(alignment: .center) {
             Text(title)

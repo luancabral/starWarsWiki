@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonDetailsContentView: View {
     @StateObject var viewModel: PersonDetailsContentViewModel
+    @State private var showAlert = false
     
     
     init(person: Person) {
@@ -16,10 +17,18 @@ struct PersonDetailsContentView: View {
     }
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false){
-            MoversInfoView(viewModel.getFilms(), title: "Movies")
+        ZStack {
+            ScrollView(.vertical, showsIndicators: false){
+                MoversInfoView(viewModel.getFilms(), title: "Movies")
+            }
+            .navigationTitle(viewModel.person.name)
+            
+            if viewModel.isLoading {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .scaleEffect(3)
+            }
         }
-        .navigationTitle(viewModel.person.name)
     }
 }
 

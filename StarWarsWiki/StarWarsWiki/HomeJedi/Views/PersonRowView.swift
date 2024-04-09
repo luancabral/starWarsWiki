@@ -12,13 +12,14 @@ struct PersonRowView: View {
     
     var body: some View {
         HStack {
-            //Gender image
+            // MARK: - Gender image
             Image(systemName: "person.crop.circle.fill")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 24, height: 24)
                 .foregroundColor(person.gender.iconColor)
-            //Name and Birth year
+            
+            // MARK: - Name and Birth year
             VStack(alignment: .leading, spacing: 4) {
                 Text(person.name)
                     .font(.subheadline)
@@ -33,7 +34,7 @@ struct PersonRowView: View {
             
             Spacer()
             
-            //Mass and height
+            // MARK: - Mass and height
             VStack(alignment: .trailing, spacing: 4) {
                 Text("Height: \(person.height)")
                     .font(.subheadline)

@@ -24,22 +24,22 @@ struct MoversInfoItemView: View {
                 .foregroundColor(.orange)
             Spacer()
             VStack(alignment: .center, spacing: 4) {
-                //Title
+                
+                // MARK: - Title
                 Text(data.title)
                     .font(.body)
                     .fontWeight(.bold)
                 
-                //Subtitle
+                // MARK: - Subtitle
                 Text(data.subtitle)
                     .font(.caption)
                     .fontWeight(.bold)
-                //Info
+                
+                // MARK: - Info
                 Text(data.info)
                     .font(.caption)
                     .fontWeight(.bold)
-                
             }
-            
             Spacer()
         }
         .padding()

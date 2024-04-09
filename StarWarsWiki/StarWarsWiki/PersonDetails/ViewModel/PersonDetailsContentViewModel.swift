@@ -8,10 +8,11 @@
 import Foundation
 
 final class PersonDetailsContentViewModel: ObservableObject {
-    let service: StarWarsServiceProtocol
-    
-    let person: Person
     @Published var films = [Film]()
+    @Published var isLoading = false
+    
+    let service: StarWarsServiceProtocol
+    let person: Person
     
     init(person: Person, service: StarWarsService = StarWarsService()) {
         self.person = person
@@ -20,16 +21,19 @@ final class PersonDetailsContentViewModel: ObservableObject {
     }
     
     private func fetchFilms() {
+        self.isLoading = true
         person.films.forEach { filmUrl in
             service.fetchFilm(url: filmUrl) { result in
+                self.isLoading = false
                 switch result {
                 case .success(let film):
                     self.films.append(film)
-                case .failure(let error):
-                    print(error)
+                case .failure(_):
+                    break
                 }
             }
         }
+       
     }
     
     func getFilms() -> [MoversInfoItemView.Data] {

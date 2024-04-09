@@ -11,31 +11,36 @@ struct HomeContentView: View {
     @StateObject private var viewModel = HomeContentViewModel()
     @State private var showAlert = false
     
+    
     var body: some View {
         NavigationStack {
-            List(viewModel.people) { person in
-                NavigationLink(destination: PersonDetailsContentView(person: person)) {
-                    PersonRowView(person: person)
-                        .onAppear{
-                            if person.id == viewModel.people.last?.id {
-                                viewModel.fetchNextPage()
+            ZStack{
+                List(viewModel.people) { person in
+                    NavigationLink(destination: PersonDetailsContentView(person: person)) {
+                        PersonRowView(person: person)
+                            .onAppear{
+                                if person.id == viewModel.people.last?.id {
+                                    viewModel.fetchNextPage()
+                                }
                             }
-                        }
+                    }
                 }
-            }
-            .refreshable {
-                viewModel.handleRefresh()
-            }
-            .onReceive(viewModel.$error, perform: { error in
-                if error != nil {
-                    showAlert.toggle()
+                .refreshable {
+                    viewModel.handleRefresh()
                 }
-            })
-            .alert(isPresented: $showAlert, content: {
-                Alert(title: Text("Error"),
-                      message: Text(viewModel.error?.localizedDescription ?? ""))
-            })
-            .navigationTitle("StarWars Wiki")
+                .onReceive(viewModel.$error, perform: { error in
+                    if error != nil {
+                        showAlert.toggle()
+                    }
+                })
+                .alert(isPresented: $showAlert, content: {
+                    Alert(title: Text("Error"),
+                          message: Text(viewModel.error?.localizedDescription ?? ""))
+                })
+                .navigationTitle("StarWars Wiki")
+                
+ 
+            }
         }
     }
 }
